@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myflutterapp/Home.dart';
 import 'package:myflutterapp/HttpTest.dart';
 
 void main() => runApp(new MyApp());
@@ -9,9 +10,9 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Startup Name Generator',
       theme: new ThemeData(
-        primaryColor: Colors.white,
+        primaryColor: Colors.orange,
       ),
-      home: new HttpTest(),
+      routes: {"/": (context) => new Home(), "/HttpTest": (context) => new HttpTest()},
     );
   }
 }

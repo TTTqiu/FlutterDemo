@@ -3,23 +3,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-class HttpTest extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+class HttpTest extends StatefulWidget {
+  HttpTest({Key key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _HttpTestState createState() => new _HttpTestState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HttpTestState extends State<HttpTest> {
   var _ipAddress = 'Unknown';
 
   _getIPAddress() async {
@@ -56,6 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
     var spacer = new SizedBox(height: 32.0);
 
     return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Http'),
+      ),
       body: new Center(
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,

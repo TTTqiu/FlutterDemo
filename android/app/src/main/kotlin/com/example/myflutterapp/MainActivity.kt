@@ -9,6 +9,7 @@ import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.EventChannel.EventSink
 import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugins.GeneratedPluginRegistrant
 
 
 class MainActivity : FlutterActivity() {
@@ -18,6 +19,7 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        GeneratedPluginRegistrant.registerWith(flutterEngine)
         EventChannel(flutterEngine.dartExecutor, CHARGING_CHANNEL).setStreamHandler(
                 object : EventChannel.StreamHandler {
                     lateinit var chargingStateChangeReceiver: BroadcastReceiver

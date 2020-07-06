@@ -74,30 +74,28 @@ class _AnimatedListSampleState extends State<AnimatedListSample> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: const Text('AnimatedList'),
-          actions: <Widget>[
-            new IconButton(
-              icon: const Icon(Icons.add_circle),
-              onPressed: _insert,
-              tooltip: 'insert a new item',
-            ),
-            new IconButton(
-              icon: const Icon(Icons.remove_circle),
-              onPressed: _remove,
+    return new Scaffold(
+      appBar: new AppBar(
+        title: const Text('AnimatedList'),
+        actions: <Widget>[
+          new IconButton(
+            icon: const Icon(Icons.add_circle),
+            onPressed: _insert,
+            tooltip: 'insert a new item',
+          ),
+          new IconButton(
+            icon: const Icon(Icons.remove_circle),
+            onPressed: _remove,
               tooltip: 'remove the selected item',
             ),
-          ],
-        ),
-        body: new Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: new AnimatedList(
-            key: _listKey,
-            initialItemCount: _list.length,
-            itemBuilder: _buildItem,
-          ),
+        ],
+      ),
+      body: new Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: new AnimatedList(
+          key: _listKey,
+          initialItemCount: _list.length,
+          itemBuilder: _buildItem,
         ),
       ),
     );
